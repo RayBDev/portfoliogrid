@@ -78,6 +78,12 @@ function SEO({ description, lang, meta, keywords, title }) {
         )
         .concat(meta)}
     >
+      <script
+        defer
+        src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"
+        integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
+        crossorigin="anonymous"
+      />
       <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
