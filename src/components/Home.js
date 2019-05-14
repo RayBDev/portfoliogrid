@@ -8,7 +8,7 @@ const Home = ({ isHomeOpen }) => {
       <div className="container">
         <section id="home-section">
           <div className="card card-body bg-primary text-white py-5">
-            <h2>Welcome to My Page</h2>
+            <h2>Welcome to My Portfolio Site</h2>
             <p className="lead">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Adipisci, blanditiis.

@@ -8,7 +8,7 @@ const Resume = ({ isResumeOpen }) => {
       <div className="container">
         <section id="resume-section">
           <div className="card card-body bg-success text-white py-5">
-            <h2>my Resume</h2>
+            <h2>My Resume</h2>
             <p className="lead">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Adipisci, blanditiis.
