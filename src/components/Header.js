@@ -3,11 +3,22 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { connect } from "react-redux"
 
-import { toggleOpen } from "../state/app"
+import {
+  toggleHomeOpen,
+  toggleResumeOpen,
+  toggleWorkOpen,
+  toggleContactOpen,
+} from "../state/app"
 
 import "./Header.css"
 
-const Header = ({ isOpen, dispatch }) => {
+const Header = ({
+  isHomeOpen,
+  isResumeOpen,
+  isWorkOpen,
+  isContactOpen,
+  dispatch,
+}) => {
   return (
     <StaticQuery
       query={graphql`
@@ -67,36 +78,40 @@ const Header = ({ isOpen, dispatch }) => {
                     <div className="d-flex flex-row text-white align-items-stretch text-center">
                       <div
                         className="port-item col-3 p-4 bg-primary"
-                        onClick={() => dispatch(toggleOpen(!isOpen))}
+                        onClick={() => dispatch(toggleHomeOpen(!isHomeOpen))}
                         aria-controls="home-section"
-                        aria-expanded={isOpen}
+                        aria-expanded={isHomeOpen}
                       >
                         <i className="fas fa-home fa-2x" />
                         <span className="d-none d-sm-block">Home</span>
                       </div>
                       <div
                         className="port-item col-3 p-4 bg-success"
-                        onClick={() => dispatch(toggleOpen(!isOpen))}
+                        onClick={() =>
+                          dispatch(toggleResumeOpen(!isResumeOpen))
+                        }
                         aria-controls="resume-section"
-                        aria-expanded={isOpen}
+                        aria-expanded={isResumeOpen}
                       >
                         <i className="fas fa-graduation-cap fa-2x" />
                         <span className="d-none d-sm-block">Resume</span>
                       </div>
                       <div
                         className="port-item col-3 p-4 bg-warning"
-                        onClick={() => dispatch(toggleOpen(!isOpen))}
+                        onClick={() => dispatch(toggleWorkOpen(!isWorkOpen))}
                         aria-controls="work-section"
-                        aria-expanded={isOpen}
+                        aria-expanded={isWorkOpen}
                       >
                         <i className="fas fa-folder-open fa-2x" />
                         <span className="d-none d-sm-block">Work</span>
                       </div>
                       <div
                         className="port-item col-3 p-4 bg-danger"
-                        onClick={() => dispatch(toggleOpen(!isOpen))}
+                        onClick={() =>
+                          dispatch(toggleContactOpen(!isContactOpen))
+                        }
                         aria-controls="contact-section"
-                        aria-expanded={isOpen}
+                        aria-expanded={isContactOpen}
                       >
                         <i className="fas fa-envelope fa-2x" />
                         <span className="d-none d-sm-block">Contact</span>
@@ -115,7 +130,10 @@ const Header = ({ isOpen, dispatch }) => {
 
 export default connect(
   state => ({
-    isOpen: state.app.isOpen,
+    isHomeOpen: state.app.isHomeOpen,
+    isWorkOpen: state.app.isWorkOpen,
+    isResumeOpen: state.app.isResumeOpen,
+    isContactOpen: state.app.isContactOpen,
   }),
   null
 )(Header)

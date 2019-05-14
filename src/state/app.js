@@ -33,13 +33,37 @@ export const toggleContactOpen = isContactOpen => ({
 export default (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_HOME_OPEN:
-      return { ...state, isHomeOpen: action.isHomeOpen }
+      return {
+        ...state,
+        isHomeOpen: action.isHomeOpen,
+        isResumeOpen: false,
+        isWorkOpen: false,
+        isContactOpen: false,
+      }
     case TOGGLE_RESUME_OPEN:
-      return { ...state, isResumeOpen: action.isResumeOpen }
+      return {
+        ...state,
+        isResumeOpen: action.isResumeOpen,
+        isHomeOpen: false,
+        isWorkOpen: false,
+        isContactOpen: false,
+      }
     case TOGGLE_WORK_OPEN:
-      return { ...state, isWorkOpen: action.isWorkOpen }
+      return {
+        ...state,
+        isWorkOpen: action.isWorkOpen,
+        isHomeOpen: false,
+        isResumeOpen: false,
+        isContactOpen: false,
+      }
     case TOGGLE_CONTACT_OPEN:
-      return { ...state, isContactOpen: action.isContactOpen }
+      return {
+        ...state,
+        isContactOpen: action.isContactOpen,
+        isHomeOpen: false,
+        isResumeOpen: false,
+        isWorkOpen: false,
+      }
     default:
       return state
   }

@@ -2,9 +2,9 @@ import React from "react"
 import { connect } from "react-redux"
 import Collapse from "react-bootstrap/Collapse"
 
-const Home = ({ isOpen }) => {
+const Home = ({ isHomeOpen }) => {
   return (
-    <Collapse in={isOpen}>
+    <Collapse in={isHomeOpen}>
       <div className="container">
         <section id="home-section">
           <div className="card card-body bg-primary text-white py-5">
@@ -66,7 +66,7 @@ const Home = ({ isOpen }) => {
 
 export default connect(
   state => ({
-    isOpen: state.app.isOpen,
+    isHomeOpen: state.app.isHomeOpen,
   }),
   null
 )(Home)
